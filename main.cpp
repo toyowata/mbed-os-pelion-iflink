@@ -46,8 +46,8 @@ static SocketAddress sa;
 static InterruptIn btn1(MBED_CONF_APP_USER_BUTTON);
 
 static DigitalOut led_green(MBED_CONF_APP_LIGHT_0);
-static DigitalOut led_yellow(MBED_CONF_APP_LIGHT_0);
-static DigitalOut led_red(MBED_CONF_APP_LIGHT_0);
+static DigitalOut led_yellow(MBED_CONF_APP_LIGHT_1);
+static DigitalOut led_red(MBED_CONF_APP_LIGHT_2);
 
 EventQueue queue(32 * EVENTS_EVENT_SIZE);
 Thread t;
@@ -64,7 +64,7 @@ void button_press(void)
     value_mesurement_mutex.lock();
     m2m_get_res->set_value(m2m_get_res->get_value_int() + 1);
     button_count = m2m_get_res->get_value_int();
-    printf("[PDM] Counter %d\n", button_count);
+    printf("[Counter = %d\n", button_count);
 
     led_green   = (((button_count & 1) >> 0) & 1);
     led_yellow  = (((button_count & 2) >> 1) & 1);
@@ -89,7 +89,7 @@ void value_measurement(void)
     value_mesurement_mutex.lock();
 
     button_count = m2m_get_res->get_value_int();
-    printf("[PDM] Counter %d\n", button_count);
+    printf("[Counter = %d\n", button_count);
 
     led_green   = (((button_count & 1) >> 0) & 1);
     led_yellow  = (((button_count & 2) >> 1) & 1);

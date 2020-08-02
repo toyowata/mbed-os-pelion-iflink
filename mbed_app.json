@@ -23,10 +23,10 @@
             "nsapi.default-wifi-security"               : "WPA_WPA2",
             "nsapi.default-wifi-ssid"                   : "\"SSID\"",
             "nsapi.default-wifi-password"               : "\"PASSWORD\"",
-            "nsapi.default-cellular-apn"                : "\"APN\"",
+            "nsapi.default-cellular-apn"                : "\"soracom.io\"",
             "nsapi.default-cellular-sim-pin"            : null,
-            "nsapi.default-cellular-username"           : null,
-            "nsapi.default-cellular-password"           : null
+            "nsapi.default-cellular-username"           : "\"sora\"",
+            "nsapi.default-cellular-password"           : "\"sora\""
         },
         "Freescale": {
             "lwip.mem-size"                             : 12500
@@ -186,9 +186,9 @@
             "user-button"                               : "USER_BUTTON0"
         },
         "WIO_3G": {
-            "light-0"                                   : "D20",
-            "light-1"                                   : "D20",
-            "light-2"                                   : "D20",
+            "light-0"                                   : "A4",
+            "light-1"                                   : "A6",
+            "light-2"                                   : "A7",
             "target.macros_add"                         : ["MBEDTLS_USER_CONFIG_FILE=\"mbedTLSConfig_mbedOS.h\""],
             "target.features_add"                       : ["LWIP", "STORAGE", "BOOTLOADER"],
             "target.device_has_remove"                  : ["SERIAL_FC"],
@@ -220,9 +220,9 @@
             "user-button"                               : "D19"
         },
         "WIO_BG96": {
-            "light-0"                                   : "D20",
-            "light-1"                                   : "D20",
-            "light-2"                                   : "D20",
+            "light-0"                                   : "A4",
+            "light-1"                                   : "A6",
+            "light-2"                                   : "A7",
             "led-pin"                                   : "D20",
             "led-on"                                    : 1,
             "led-off"                                   : 0,

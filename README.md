@@ -21,66 +21,10 @@ https://os.mbed.com/studio/
 
 ## Pelion Portal Account の取得とサービス利用準備
 
-クラウドサービスのアカウントは、評価用として機能制限付きの無償版アカウントが用意されています。
-自分のアカウントの[コンソール](https://console.mbed.com/)の中にある、Pelion Device Managementから`Learn how to connect`と書かれている黄色のボタンを押します。
-
-<img width="400" alt="pdm-learn-how-to-connect.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/47573f9a-5ca2-6480-11ff-59d559ae6df7.png">
-
-画面が切り替わるので、`Activate your free access` ボタンを押します。
-
-<img width="357" alt="pdm-activate-1.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/c64e066d-0ccc-d87c-9a7c-d46f79879a67.png">
-
-以下の画面から、`Activate Pelion Device Management account`ボタンを押します。
-
-<img width="476" alt="pdm-activate-2.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/165eeeb9-0d7c-874b-5572-151e48ebf690.png">
-
-ボタンを押すと以下のようなメッセージが表示されます。
-
-<img width="356" alt="pdm-success.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/baf53a76-f3d4-1103-87de-72ae826d97b1.png">
-
-自分のアカウントの[コンソール](https://console.mbed.com/)に以下の項目が表示されていれば、準備完了です。
-
-<img width="400" alt="pdm-ready.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/1c09493a-dc20-f768-b995-f97c3e7484dc.png">
-
-`portal`ボタンを押して、Pelion Device Management のポータルサイトにアクセスします。 
-初回アクセス時はライセンス条項への同意が必要になります。
-
-### APIキーの生成
-
-ポータルサイトにアクセス出来たので、自分のアカウントで利用するAPIキーを生成します。以下のURLにアクセスするか、左側のメニューから[Access management]-[API keys]を選択します。
-https://portal.mbedcloud.com/access/keys
-
-画面右上の`+ New API Key`ボタンをクリックします。
-
-<img width="600" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/706c9b77-92ad-b215-1c97-14c7c4205ed6.png">
-
-Create API Keyダイアログが開きます。`API Key name`の部分に任意の名前を設定します。Groupは、Administratorsを指定してください。`Create API Key`ボタンを押して、APIキーを生成します。
-
-<img width="400" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/b41f240f-1b41-3d76-7524-ef059b8194a6.png">
-
-【注意】　ここで生成されたAPIキー（ak_で始まる文字列）は必ず、コピーして値を保存しておいてください。セキュリティの関係上、ポータルサイトからAPIキーの値は二度と取得できなくなります。もし、APIキーの値を紛失してしまった場合は、新しくキーを生成してください。
-
-<img width="400" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/98e24f0d-bd06-718d-dcfd-3e6a2d8bcba7.png">
-
-### 開発者証明書の生成
-
-次にデバイスがサービス接続時に必要な証明書を生成します。通常、プロダクションに必要なデバイス証明書の生成や書き込みは、工場出荷時にセキュアな環境で行いますが、ここでは開発時に手軽に利用できる開発証明書を使用します。
-以下のURLにアクセスするか、左側のメニューから[Device identity]-[Certificates]を選択します。
-https://portal.mbedcloud.com/identity/certificates/list
-
-画面右上の`+ New certificate`ボタンをクリックし、`Create a developer certificate`を選択します。
-
-<img width="600" alt="" src="https://dl.dropboxusercontent.com/s/zvkz7c9n6qdm8w5/portal_devcert1.png">
-
-Nameの部分は自動入力されますが、変更することも可能です。`Create certificate`ボタンを押して、開発証明書を作成します。
-
-<img width="400" alt="" src="https://dl.dropboxusercontent.com/s/cr0rr4lx4lpdfpl/portal_devcert2.png">
+アカウントの取得、APIキーの生成、開発者証明書の作成方法は、こちらを参照してください。
+https://blog.pelion.com/post/arm-pelion-device-management-tutorial-jp-ja
 
 ## デバイス側サンプルプログラムの作成
-
-Pelion Device Management ClientをMbed OS対応デバイスで使用するには、[クイックスタートガイド](https://os.mbed.com/guides/connect-device-to-pelion/)が用意されています。
-
-クイックスタートガイドには、動作確認済みのサンプルプログラムが用意されています。このサンプルをインポートして自分のアカウント用の設定を行うだけで、Pelion Device Managementサービスを簡単に体験することが出来ます。クイックスタートガイドで説明している内容は、MbedオンラインIDEを使用する方法ですが、このドキュメントではローカル環境で使用可能なMbed Studioで同じサンプルプログラムをビルドしてみます。
 
 ### サンプルプログラムのインポートと設定
 
@@ -91,7 +35,7 @@ Wio 3Gボードをセルラー接続で使用する手順を説明します。
 <img width="160" alt="" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/4fbe1716-70d7-6d28-6657-e949ca1f8a92.png">
 
 次に、メニュー[File]-[Import Program...]を選択し表示されたダイアログに以下のリンクを入力します。
-https://github.com/toyowata/mbed-os-pelion-sensor
+https://github.com/toyowata/mbed-os-pelion-iflink
 
 <img width="300" src="https://dl.dropboxusercontent.com/s/aepz7g90o40wi8m/Screen%20Shot%202020-04-30%20at%2015.00.39.png">
 
@@ -120,7 +64,9 @@ https://github.com/toyowata/mbed-os-pelion-sensor
 
 #### セルラー回線用の設定
 
-Wio 3G等のセルラー接続の場合は、使用するネットワーク回線に応じた設定が必要です。左側のプログラムのリストから、`mbed_app.json`をクリックしてオープンします。
+このサンプルコードは、デフォルトでSORACOM Airサービスの設定が含まれています。
+
+それ以外のSIMを使用する場合は、使用するネットワーク回線に応じた設定が必要です。左側のプログラムのリストから、`mbed_app.json`をクリックしてオープンします。
 以下の画面でハイライトされている`nsapi.default-cellular-apn`等の項目を使用するSIMカードに応じた適切な値に設定します。
 
 <img width="600" src="https://dl.dropboxusercontent.com/s/dun4gsy291wtnmx/Screen%20Shot%202020-04-30%20at%2015.13.34.png">
@@ -164,14 +110,9 @@ Wio 3G等のセルラー接続の場合は、使用するネットワーク回�
 
 ### ハードウェアの接続設定
 
-[こちらの手順](https://seeedjp.github.io/Wiki/General/how_to_sim_tf-en)を参考にして、Wio 3GにSIMカードを挿入します（このサンプルプログラムでは、マイクロSDカードは使用しません）。
+パトライトLEDボードとWio 3GをGroveケーブルで接続します。写真のようにWio 3GボードのA6, A4コネクタをボードに接続してください。
 
-このサンプルプログラムでは、温湿度・気圧センサと、LEDボタンを使用します。写真のように接続して下さい（BME280センサーモジュールをI2Cに、青LEDボタンをD20に接続します）。
-
-<img width="400" src="https://dl.dropboxusercontent.com/s/wfd5shdts0qegp7/IMG_8045.JPG">
-
-
-最後にUSBケーブルでホストPCとWio 3Gボードを接続します。
+パトライトLEDボードにACアダプタ（DC24V）を接続します。最後にUSBケーブルでホストPCとWio 3Gボードを接続します。
 
 ### サンプルプログラムのビルド
 
@@ -205,14 +146,16 @@ USBケーブルでボードをホストコンピュータを接続すると、Mb
 
 <img width="600" src="https://dl.dropboxusercontent.com/s/h8tdy0lxs9z9q2q/console_out.png">
 
-以下のようなシリアル出力ログが表示されます。`Account ID`や`Endpoint name`が表示されれば、プログラムは正常に動作しています。
-このサンプルコードでは、5秒ごとにセンサーから取得したデータ（湿度、気圧、温度）を表示し、Pelion Device Managementサービスに値をアップデートします。この値は、Pelion Device Managementのリソースに書き込まれます。また、AWSアカウント用の設定が行われていれば、AWS IoTのMQTTクライアントにもパブリッシュされます。
+以下のようなシリアル出力ログが表示されます。Pelion Device Managementサービスに正常に登録されると、`Account ID`や`Endpoint name`が表示されます。同時に、Wio 3Gボード上の青色LEDが点灯します（接続までには30秒程度かかります）。
+このサンプルコードでは、5秒ごとにパトライトLEDボードを制御するための設定値が表示されます。
 
 ```
+
 Mbed Bootloader
 No Update image
 [DBG ] Active firmware up-to-date
 booting...
+
 Application ready
 Connect to network
 Network initialized, connected with IP 10.129.102.246
@@ -222,45 +165,19 @@ Create resources
 Register Pelion Device Management Client
 
 Client registered.
-Account ID: 0160XXXXXXXXXX206ae5ecf600000000
-Endpoint name: 017XXXXXXXXXX0000000000100138fbc
-Device ID: 017XXXXXXXXXX0000000000100138fbc
+Account ID: 01600xxxx058be206ae5ecf600000000
+Endpoint name: 01xxxx09326200000000000100128207
+Device ID: 01xxxx09326200000000000100128207
 
-Opening network interface...
-Connecting to network
-Network interface opened successfully.
+value = 0
+value = 0
+value = 0
+value = 0
+value = 0
+Counter resource set to 7
+value = 7
+value = 7
 
-[PDM] humidity = 61.56%, pressure =  994.48 hPa, temperature = 29.84 DegC
-Time is now Thu Jun 11 11:36:22 2020
-[AWS] Connecting to host xxxxxxxxxx-ats.iot.ap-northeast-1.amazonaws.com:8883 ...
-[AWS] Connection established.
-[AWS] MQTT client is trying to connect the server ...
-[AWS] Client connected.
-
-[AWS] Client is trying to subscribe a topic "cmd/area-1/device-1".
-[AWS] Client has subscribed a topic "cmd/area-1/device-1".
-[AWS] To send a packet, push the button on your board.
-
-[PDM] humidity = 61.45%, pressure =  994.15 hPa, temperature = 29.84 DegC
-{"humidity":61.45, "pressure": 994.15, "temperature":29.84}
-
-[AWS] Message published.
-[PDM] humidity = 61.53%, pressure =  994.21 hPa, temperature = 29.83 DegC
-{"humidity":61.53, "pressure": 994.21, "temperature":29.83}
-```
-
-また、青LEDボタンを押すと、カウント値をインクリメントします。この値は、Pelion Device Managementのリソースに書き込まれるのと同時に、AWS IoTのMQTTクライアントにもパブリッシュされます。
-
-```
-[PDM] Counter 1
-{"is_button_clicked":true,"count":1}
-
-[AWS] Message published.
-[AWS] Message arrived:
-{"is_button_clicked":true,"count":1}
-
-[PDM] Counter 2
-{"is_button_clicked":true,"count":2}
 ```
 
 ## ウェブサイトでの接続確認
@@ -276,21 +193,29 @@ Time is now Thu Jun 11 11:36:22 2020
 <img width="1358" alt="Screen Shot 2020-04-10 at 18.28.22.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/9ba97570-1185-b46a-86a1-2bee8ee025a3.png">
 
 [Resources（リソース）] タブをクリックすると、[OMA LWM2M仕様](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-lwm2m/)に準拠したデバイスのリソースパスが表示されます。
-`/3200/0/5501`（サンプルコードでカウンター値にとして使用しているDigital Inputに割り当てられたリソース）をクリックします。
+`/3200/0/5501`（サンプルコードでパトライトLEDボードを制御する値にとして使用しているDigital Inputに割り当てられたリソース）をクリックします。
 
 <img width="1358" alt="Screen Shot 2020-04-10 at 18.29.13.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/2b07f2e7-22e7-4e81-6bf0-2c2dcf8646ef.png">
 
-`/3200/0/5501`をクリックすると、青LEDボタンを押すことでカウントアップされた数値がグラフ化され値が更新されます。
+`/3200/0/5501`をクリックすると、現在の値がグラフ化され値が更新されます。エディットボタンをクリックして値を更新することも出来ます。
 
 <img width="600" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/9ab8107c-8a29-b0e4-e31b-00b98b452049.png">
 
-また、センサーから取得されたデータは、OMA LWM2M規格に準拠した以下のリソースパスに書き込まれています。これらの値も、該当するリソースをクリックすることで表示することが出来ます。
+この`/3200/0/5501`リソースの制御データは、以下のフォーマットでLEDを制御します。
 
-|種別|リソースパス|単位|
-|---|---|---|
-|温度|/3303/0/5700|℃|
-|湿度|/3304/0/5700|%|
-|気圧|/3323/0/5700|hPa|
+|設定値|赤LED|黄LED|緑LED|
+|---|---|---|---|
+|0|OFF|OFF|OFF|
+|1|ON|OFF|OFF|
+|2|OFF|ON|OFF|
+|3|ON|ON|OFF|
+|4|OFF|OFF|ON|
+|5|ON|OFF|ON|
+|6|OFF|ON|ON|
+|7|ON|ON|ON|
+
+※ Bit 0〜2までが、各LEDに対応しています。
+※ Bit 3以上の値は無視されます。
 
 ## トラブルシューティング
 

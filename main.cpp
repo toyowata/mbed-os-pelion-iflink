@@ -23,6 +23,9 @@
 #include "m2mresource.h"                       // Required for M2MResource
 #include "key_config_manager.h"                // Required for kcm_factory_reset
 #include "mbed-trace/mbed_trace.h"             // Required for mbed_trace_*
+#if defined(TARGET_WIO_3G) || defined(TARGET_WIO_BG96)
+#include "Wio_Cellular_LED.h"
+#endif
 
 // Pointers to the resources that will be created in main_application().
 static MbedCloudClient *cloud_client;
@@ -101,7 +104,7 @@ void value_measurement(void)
 
 void get_res_update(const char* /*object_name*/)
 {
-    printf("Counter resource set to %d\n", (int)m2m_get_res->get_value_int());
+    printf("LED resource set to %d\n", (int)m2m_get_res->get_value_int());
 }
 
 void put_res_update(const char* /*object_name*/)
@@ -132,6 +135,10 @@ void client_registered(void)
 {
     printf("Client registered.\n");
     print_client_ids();
+#if defined(TARGET_WIO_3G) || defined(TARGET_WIO_BG96)
+    setcolor(WS2812_BLUE);
+#else
+#endif
     error_count = 0;
     cloud_client_running = true;
 }
@@ -189,6 +196,10 @@ void flush_stdin_buffer(void)
 int main(void)
 {
     int status;
+
+#if defined(TARGET_WIO_3G) || defined(TARGET_WIO_BG96)
+    setcolor(WS2812_BLACK);
+#endif
 
     status = mbed_trace_init();
     if (status != 0) {

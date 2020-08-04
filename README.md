@@ -199,7 +199,7 @@ value = 7
 
 <img width="1358" alt="Screen Shot 2020-04-10 at 18.29.13.png" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/2b07f2e7-22e7-4e81-6bf0-2c2dcf8646ef.png">
 
-`/3200/0/5501`をクリックすると、現在の値がグラフ化され値が更新されます。エディットボタンをクリックして、PUTを先駆して値を更新することも出来ます。
+`/3200/0/5501`をクリックすると、現在の値がグラフ化され値が更新されます。エディットボタンをクリックして、PUTを選択して値を更新することも出来ます。
 
 <img width="600" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/75582/9ab8107c-8a29-b0e4-e31b-00b98b452049.png">
 

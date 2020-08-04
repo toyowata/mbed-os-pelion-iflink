@@ -205,19 +205,19 @@ value = 7
 
 この`/3200/0/5501`リソースの制御データは、以下のフォーマットでLEDを制御します。
 
-|設定値|赤LED|黄LED|緑LED|
+|設定値|緑LED|黄LED|赤LED|
 |---|---|---|---|
 |0|OFF|OFF|OFF|
-|1|ON|OFF|OFF|
+|1|OFF|OFF|ON|
 |2|OFF|ON|OFF|
-|3|ON|ON|OFF|
-|4|OFF|OFF|ON|
+|3|OFF|ON|ON|
+|4|ON|OFF|OFF|
 |5|ON|OFF|ON|
-|6|OFF|ON|ON|
+|6|ON|ON|OFF|
 |7|ON|ON|ON|
 
-※ Bit 0〜2までが、各LEDに対応しています。
-※ Bit 3以上の値は無視されます。
+※ Bit 0〜2までが、各LEDに対応しています。  
+※ Bit 3以上の値は無視されます。  
 
 Pelion Service APIを使用する場合は、以下のページの「5.デバイスのリソースに書き込む」を参照してください。
 

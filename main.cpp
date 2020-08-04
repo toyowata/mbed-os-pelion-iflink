@@ -60,6 +60,8 @@ int button_count = 0;
 /* Enable GPIO power for Wio target */
 #if defined(TARGET_WIO_3G) || defined(TARGET_WIO_BG96)
 DigitalOut GrovePower(GRO_POWR, 1);
+#else
+DigitalOut led_ready(MBED_CONF_APP_LED_PIN, MBED_CONF_APP_LED_OFF);
 #endif
 
 void button_press(void)
@@ -138,6 +140,7 @@ void client_registered(void)
 #if defined(TARGET_WIO_3G) || defined(TARGET_WIO_BG96)
     setcolor(WS2812_BLUE);
 #else
+    led_ready = MBED_CONF_APP_LED_ON;
 #endif
     error_count = 0;
     cloud_client_running = true;
@@ -199,6 +202,8 @@ int main(void)
 
 #if defined(TARGET_WIO_3G) || defined(TARGET_WIO_BG96)
     setcolor(WS2812_BLACK);
+#else
+    led_ready = MBED_CONF_APP_LED_OFF;
 #endif
 
     status = mbed_trace_init();

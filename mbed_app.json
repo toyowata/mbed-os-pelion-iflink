@@ -62,9 +62,9 @@
             "user-button"                               : "BUTTON1"
         },
         "NUCLEO_F429ZI": {
-            "light-0"                                   : "D2",
+            "light-0"                                   : "D4",
             "light-1"                                   : "D3",
-            "light-2"                                   : "D4",
+            "light-2"                                   : "D2",
             "target.macros_add"                         : ["MBEDTLS_USER_CONFIG_FILE=\"mbedTLSConfig_mbedOS.h\""],
             "target.network-default-interface-type"     : "ETHERNET",
             "target.bootloader_img"                     : "bootloader/mbed-bootloader-nucleo_f429zi-internal_flash-no_rot-v4.1.0.bin",
@@ -80,7 +80,7 @@
             "storage_tdb_internal.internal_base_address": "(MBED_ROM_START+1024*1024)",
             "storage_tdb_internal.internal_size"        : "(128*1024)",
             "storage.storage_type"                      : "TDB_INTERNAL",
-            "led-pin"                                   : "LED1",
+            "led-pin"                                   : "LED2",
             "led-on"                                    : 1,
             "led-off"                                   : 0,
             "user-button"                               : "USER_BUTTON"
